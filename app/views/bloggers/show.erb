@@ -1,0 +1,11 @@
+<h1><%= @blogger.name %>'s Posts</h1>
+<h2>Total Likes earned: <%= @blogger.total_likes %></h2>
+
+<h3>Top 5 liked post</h3>
+<ol>
+  <% @posts.each do |p| %>
+    <li><%= link_to "#{p.title} #{p.likes} likes", post_path(p.id) %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Back to All Bloggers", bloggers_path %>

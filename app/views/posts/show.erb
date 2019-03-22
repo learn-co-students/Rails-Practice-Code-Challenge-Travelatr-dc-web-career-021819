@@ -1,0 +1,14 @@
+<h1>Detail for <%= @post.title %></h1>
+
+<h3>Author: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></h3>
+<h3>Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %></h3>
+<h3>Content</h3>
+<p><%= @post.content %></p>
+
+<p>Likes: <%= @post.likes %></p>
+<%= button_to "Like", like_post_path %>
+<%= button_to "Unlike", unlike_post_path %>
+
+<%= link_to "Edit This Post", edit_post_path %> <br>
+
+<%= link_to "Back to All Posts", posts_path %>
